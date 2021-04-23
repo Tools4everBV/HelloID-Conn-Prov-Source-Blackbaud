@@ -20,5 +20,5 @@ $headers = @{
 $body = "grant_type=authorization_code&redirect_uri=http://localhost&code=$code";
 
 #Request access token
-$authResponse = Invoke-RestMethod -Method POST -Uri $tokenRequestUri -Headers $headers -Body $body -Verbose:$false;
-Write-Host "New Access Token: $($authResponse.access_token)";
+$authResponse = Invoke-RestMethod -Method POST -Uri $tokenRequestUri -Headers $headers -Body $body;
+Write-Host "New Token: $($authResponse.refresh_token)";
